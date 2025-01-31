@@ -1,0 +1,36 @@
+# Compiled PDF
+*.pdf
+
+# LaTeX auxiliary and log files
+*.aux
+*.log
+*.out
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+
+# VS Code and LaTeX workshop settings
+.vscode/
+*.code-workspace
+
+# Backup and temp files
+*.bak
+*.bbl
+*.blg
+*.brf
+*.dvi
+*.glg
+*.glo
+*.gls
+*.idx
+*.ilg
+*.ind
+*.ist
+*.lof
+*.lol
+*.lot
+*.nav
+*.nlo
+*.snm
+*.toc
+*.vrb

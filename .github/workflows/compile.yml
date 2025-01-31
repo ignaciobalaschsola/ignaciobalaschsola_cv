@@ -1,0 +1,29 @@
+name: Build LaTeX CV
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Install LaTeX
+        run: sudo apt-get install -y texlive-latex-extra latexmk
+
+      - name: Compile CV
+        run: |
+          mkdir -p build
+          latexmk -pdf -pdflatex="pdflatex -interaction=nonstopmode" -output-directory=build src/content.tex
+          mv build/content.pdf build/BALASCHSOLA.pdf  # Rename output PDF
+
+      - name: Upload PDF Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: BALASCHSOLA_CV
+          path: build/BALASCHSOLA.pdf
