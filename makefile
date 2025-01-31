@@ -27,6 +27,8 @@ clean:
 # Fully remove all generated files
 purge: clean
 	rm -rf $(BUILD_DIR)
+	rm -f $(SRC_DIR)/*.aux $(SRC_DIR)/*.log $(SRC_DIR)/*.out $(SRC_DIR)/*.fls $(SRC_DIR)/*.fdb_latexmk
+	rm -f $(SRC_DIR)/*.synctex.gz $(SRC_DIR)/*.pdf
 
 # Open the compiled PDF (Mac/Linux)
 view:
