@@ -17,7 +17,12 @@ $(BUILD_DIR)/$(TARGET).pdf: $(SRC_DIR)/$(TEX_FILE) $(SRC_DIR)/$(CLASS_FILE)
 	@mkdir -p $(BUILD_DIR)  # Ensure build directory exists
 	cp $(SRC_DIR)/$(CLASS_FILE) $(BUILD_DIR)/  # Copy class file
 	$(LATEXMK) -pdf -pdflatex="$(PDFLATEX)" -output-directory=$(BUILD_DIR) $(SRC_DIR)/$(TEX_FILE)
-	mv $(BUILD_DIR)/content.pdf $(BUILD_DIR)/$(TARGET).pdf  # Rename final output
+	@if [ -f "$(BUILD_DIR)/content.pdf" ]; then \
+		mv $(BUILD_DIR)/content.pdf $(BUILD_DIR)/$(TARGET).pdf; \
+		echo "✅ Renamed content.pdf to BALASCHSOLA.pdf"; \
+	else \
+		echo "❌ Error: content.pdf was not generated! Check LaTeX logs."; \
+	fi
 
 # Clean up auxiliary files
 clean:
