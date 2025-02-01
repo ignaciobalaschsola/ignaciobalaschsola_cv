@@ -1,0 +1,3 @@
+[submodule "src/altacv"]
+	path = src/altacv
+	url = https://github.com/liantze/AltaCV.git
