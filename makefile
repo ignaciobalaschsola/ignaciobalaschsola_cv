@@ -1,32 +1,32 @@
-# Define file names
-TARGET = BALASCHSOLA
+# Define file paths
 SRC_DIR = src
 BUILD_DIR = build
 TEX_FILE = content.tex
 CLASS_FILE = altacv.cls
+IMG_FILE = profile.jpg
 
 # Compiler and flags
 LATEXMK = latexmk
 PDFLATEX = pdflatex -interaction=nonstopmode
 
 # Default rule: compile the CV
-all: $(BUILD_DIR)/$(TARGET).pdf
+all: $(BUILD_DIR)/content.pdf
 
-# Compile the LaTeX document
-$(BUILD_DIR)/$(TARGET).pdf: $(SRC_DIR)/$(TEX_FILE) $(SRC_DIR)/$(CLASS_FILE)
+# Compile the LaTeX document inside build/
+$(BUILD_DIR)/content.pdf: $(SRC_DIR)/$(TEX_FILE) $(SRC_DIR)/$(CLASS_FILE) $(SRC_DIR)/$(IMG_FILE)
 	@mkdir -p $(BUILD_DIR)  # Ensure build directory exists
-	cp $(SRC_DIR)/$(CLASS_FILE) $(BUILD_DIR)/  # Copy class file
-	$(LATEXMK) -pdf -pdflatex="$(PDFLATEX)" -output-directory=$(BUILD_DIR) $(SRC_DIR)/$(TEX_FILE)
-	@if [ -f "$(BUILD_DIR)/content.pdf" ]; then \
-		mv $(BUILD_DIR)/content.pdf $(BUILD_DIR)/$(TARGET).pdf; \
-		echo "✅ Renamed content.pdf to BALASCHSOLA.pdf"; \
-	else \
-		echo "❌ Error: content.pdf was not generated! Check LaTeX logs."; \
-	fi
+
+	# Copy necessary files to build/
+	cp $(SRC_DIR)/$(TEX_FILE) $(BUILD_DIR)/
+	cp $(SRC_DIR)/$(CLASS_FILE) $(BUILD_DIR)/
+	cp $(SRC_DIR)/$(IMG_FILE) $(BUILD_DIR)/
+
+	# Compile within the build directory
+	cd $(BUILD_DIR) && $(LATEXMK) -pdf -pdflatex="$(PDFLATEX)" $(TEX_FILE)
 
 # Clean up auxiliary files
 clean:
-	$(LATEXMK) -c -output-directory=$(BUILD_DIR) $(SRC_DIR)/$(TEX_FILE)
+	$(LATEXMK) -c -output-directory=$(BUILD_DIR) $(BUILD_DIR)/$(TEX_FILE)
 	rm -rf $(BUILD_DIR)/*.log $(BUILD_DIR)/*.aux $(BUILD_DIR)/*.fls $(BUILD_DIR)/*.fdb_latexmk
 
 # Fully remove all generated files
@@ -37,4 +37,4 @@ purge: clean
 
 # Open the compiled PDF (Mac/Linux)
 view:
-	open $(BUILD_DIR)/$(TARGET).pdf
+	open $(BUILD_DIR)/content.pdf
