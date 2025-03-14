@@ -1,7 +1,3 @@
-%% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
-% \documentclass[10pt,a4paper,normalphoto]{altacv}
-
-
 \documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
 
 %% AltaCV uses the fontawesome5 and simpleicons packages.
@@ -59,7 +55,7 @@
 
 % Personal Information
 \name{Ignacio Balasch Sola}
-\tagline{Cloud, DevOps, Fintech, Data, Blockchain}
+\tagline{Business Intelligence, Data, Cloud, DevOps, Blockchain}
 \photoL{4cm}{profile} % Enlarged profile picture on the left
 \personalinfo{
   \email{ignacio@balasch.es}  \phone{+34 692 200 389}  \\
@@ -88,7 +84,9 @@
 
 
 \cvsection{About Me} % Reduced title size to fit properly
-{I’m in my early twenties, exploring different jobs to gain varied experience. I have experience with Python, SQL, Kubernetes, cloud platforms, GitHub, and Docker. My dissertation applies machine learning to data at my current internship, so I’ll be proficient in Scikit-Learn by September. I’ve enjoyed modernizing tech environments with modern workflows and tools and think I’d like to do that professionally.}
+
+Business Intelligence & Cloud Engineer with experience in SQL, Python, and Kubernetes.
+{I have developed automated data workflows, built cloud-based infrastructure, and optimized business intelligence systems to improve efficiency. At Cigna, I streamlined HR analytics by automating ETL pipelines and designing interactive Tableau dashboards. Previously, at Wequity, I developed REST APIs and deployed Kubernetes-based solutions for AI-driven data processing. Currently, I am applying machine learning techniques to real-world datasets as part of my dissertation.}
 
 
 \cvsection{\small Languages} 
@@ -119,31 +117,16 @@
 \cvsection{Current Skills} 
 \scriptsize % Reduce font size slightly
 \cvsubsection{Programming Languages}
-\begin{itemize}
-  \item Python
-  \item SQL
-\end{itemize}
+\cvtag{Python} \cvtag{SQL}
 
 \cvsubsection{Business Intelligence Tools}
-\begin{itemize}
-  \item SQL Server
-  \item Tableau
-\end{itemize}
+\cvtag{SQL Server} \cvtag{Tableau}
 
 \cvsubsection{Machine Learning Tools}
-\begin{itemize}
-  \item SCIKIT-LEARN
-  \item Jupyter Notebooks
-\end{itemize}
+\cvtag{Scikit-Learn} \cvtag{Jupyter Notebooks}
 
 \cvsubsection{DevOps}
-\begin{itemize}
-  \item GitHub
-  \item Docker
-  \item Google Cloud
-  \item Kubernetes
-\end{itemize}
-
+\cvtag{Git} \cvtag{GitHub} \cvtag{Docker} \cvtag{Kubernetes}
 
 
 
@@ -167,38 +150,45 @@
 \switchcolumn
 
 % ===== Right Column (Still Balanced) =====
-\cvsection{Education}
-\cvevent{Undergraduate Degree in Industrial Engineering (Specialization: Electrical Engineering)}{Pontifical University of Comillas (ICAI)}{2019 -- Present}{Madrid, Spain}
-\begin{itemize}
-  \item Expected Graduation: Summer 2025 (Pending Dissertation)
-\end{itemize}
-\cvevent{Computer Science}{HarvardX}{2025}{Online}
-\begin{itemize}
-  \item Introduction to Computer Science
-  \item Introduction to Databases with SQL
-\end{itemize}
+
 
 \cvsection{Experience}
-\cvevent{Data and Software Engineering Intern}{Cigna}{Present}{Madrid, Spain}
+\cvevent{Data Intern}{Cigna}{Present}{Madrid, Spain}
 \begin{itemize}
-  \item Working on business intelligence and data infrastructure.
-  \item Developing internal tools for data automation and analysis.
-  \item Implementing DevOps best practices.
+  \item Automated ETL processing for HR, reducing manual workload by \textbf{80\%} and cutting reporting time from \textbf{3 hours to 15 minutes}.  
+  \item Enabled real-time visualization of turnover rates in Tableau, \textbf{improving decision-making speed by 40\%}.  
+  \item Designed \textbf{10+ interactive Tableau dashboards} to analyze policyholder behavior, which is expected to lead to a \textbf{15\% improvement in customer retention insights}.  
+  \item Collaborated with stakeholders through \textbf{weekly meetings}, aligning data strategies with business needs and achieving a \textbf{20\% reduction in ad-hoc report requests}.  
 \end{itemize}
 
 \cvevent{Data Intern}{Wequity (ESG AI Startup)}{Summer 2023}{Brussels, Belgium}
 \begin{itemize}
-  \item Automated data processing using Python.
-  \item Implemented RestAPI solutions.
-  \item Participated in a full stack DevOp environment using Google Cloud Services.
+  \item Developed an automated data processing system integrating Google Spreadsheets and OpenAI’s API, \textbf{reducing manual data entry by 70\%}.  
+  \item Created and deployed a custom REST API to \textbf{accelerate AI-based sales data processing by 50\%}, improving reporting speed.  
+  \item Used Python libraries such as pandas and NumPy to \textbf{enhance data analysis efficiency by 30\%}, addressing AI hallucination issues.  
+  \item Worked in a cutting-edge AI startup environment, deploying Kubernetes-based solutions that \textbf{scaled up processing power by 2x} for real-time ESG data insights.  
 \end{itemize}
 
-\cvsection{Upcoming Courses} % Moved from Left to Right Column
-\scriptsize
-\cvevent{CS50's Mobile App Development with React Native}{HarvardX}{2025}{Online}
-\cvevent{Blockchain Specialization}{Undecided}{2025}{Online}
-\cvevent{Fintech Specialization}{Undecided}{2025}{Online}
 
+\cvsection{Education}
+\cvevent{Undergraduate Degree in Industrial Engineering}{Pontifical University of Comillas (ICAI)}{2019 -- Present}{Madrid, Spain}
+\begin{itemize}
+  \item Expected Completion: Summer 2025
+\end{itemize}
+\cvevent{Computer Science}{HarvardX}{2025}{Online}
+\begin{itemize}
+  \item Introduction to Computer Science      (Pending Final Project)
+  \item Introduction to Databases with SQL    (Certification Received)
+\end{itemize}
+
+\vspace{16pt} % Small vertical space
+\smallcvsection{Upcoming Courses} % Reduced title size
+
+\begin{itemize}
+  \item {\footnotesize Mobile App Development (HarvardX, 2025, Online)}
+  \item {\footnotesize Blockchain Specialization (TBD, 2025, Online)}
+  \item {\footnotesize AWS Training (PluralSight, 2025, Online)}
+\end{itemize}
 
 \end{paracol}
 \end{document}
