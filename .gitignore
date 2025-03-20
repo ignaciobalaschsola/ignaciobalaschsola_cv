@@ -34,3 +34,7 @@
 *.snm
 *.toc
 *.vrbbuild/
+
+
+# Build files
+/build/
